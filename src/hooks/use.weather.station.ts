@@ -32,7 +32,7 @@ type Observations = {
   }[];
 };
 
-export const useWeeatherStation = () => {
+export const useWeatherStation = () => {
   const { data, isLoading, error } = useSWR<Observations>(
     import.meta.env.WeatherStationAPI
   );
