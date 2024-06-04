@@ -1,30 +1,89 @@
-# React + TypeScript + Vite
+# Zephyr
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zephyr is a sleek and modern weather application that consumes data from a weather station API and presents it in a visually appealing way. Built with the latest web technologies, Zephyr aims to provide an intuitive and engaging user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Weather Data**: Fetches and displays real-time weather information from a reliable weather station API.
+- **Modern UI**: Uses Tailwind CSS and DaisyUI for a clean and responsive design.
+- **Fast and Efficient**: Powered by Vite for rapid development and SWR for data fetching.
+- **Type-safe**: Written in TypeScript for better maintainability and fewer bugs.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Vite**: A build tool that provides a faster and leaner development experience.
+- **SWR**: A React Hooks library for remote data fetching.
+- **Tailwind CSS**: A utility-first CSS framework.
+- **DaisyUI**: A plugin for Tailwind CSS that provides pre-designed components.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/cgadd21/zephyr.git
+   cd zephyr
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+   The app will be available at `http://localhost:5173/zephyr/`.
+
+## Usage
+
+1. **API Configuration:**
+
+   Create a file named `.env.local` and add an API endpoint in this file with your weather station API details:
+
+   ```plaintext
+   WEATHER_API_URL = "https://api.weatherstation.com/data";
+   ```
+
+2. **Run the application:**
+
+   ```sh
+   npm run dev
+   ```
+
+3. **Build for production:**
+
+   ```sh
+   npm run build
+   ```
+
+4. **Preview the production build:**
+
+   ```sh
+   npm run preview
+   ```
+
+## Project Structure
+
+```plaintext
+├── src
+│   ├── components
+│   ├── hooks
+│   ├── app.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── ...
+├── .gitignore
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── ...
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
