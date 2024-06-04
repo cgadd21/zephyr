@@ -45,10 +45,10 @@ Zephyr is a sleek and modern weather application that consumes data from a weath
 
 1. **API Configuration:**
 
-   Create a file named `.env.local` and add an API endpoint in this file with your weather station API details:
+   Create a file named `.env` and add an API endpoint in this file with your weather station API details:
 
    ```plaintext
-   WeatherStationAPI = "https://api.weatherstation.com/data";
+   VITE_WEATHER_API_URL = "https://api.weatherstation.com/data";
    ```
 
 2. **Run the application:**
