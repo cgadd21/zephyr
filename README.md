@@ -2,6 +2,13 @@
 
 Zephyr is a sleek and modern weather application that consumes data from a weather station API and presents it in a visually appealing way. Built with the latest web technologies, Zephyr aims to provide an intuitive and engaging user experience.
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+
 ## Features
 
 - **Real-time Weather Data**: Fetches and displays real-time weather information from a reliable weather station API.
@@ -39,8 +46,6 @@ Zephyr is a sleek and modern weather application that consumes data from a weath
    npm run dev
    ```
 
-   The app will be available at `http://localhost:5173/zephyr/`.
-
 ## Usage
 
 1. **API Configuration:**
@@ -68,22 +73,3 @@ Zephyr is a sleek and modern weather application that consumes data from a weath
    ```sh
    npm run preview
    ```
-
-## Project Structure
-
-```plaintext
-├── src
-│   ├── components
-│   ├── hooks
-│   ├── app.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── ...
-├── .gitignore
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── tsconfig.json
-├── vite.config.ts
-└── ...
-```
