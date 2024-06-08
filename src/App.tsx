@@ -1,6 +1,28 @@
+import dayjs from "dayjs";
+import { Header } from "./components/header";
+import { Building } from "./components/icons/building";
+import { Calendar } from "./components/icons/calendar";
+import { Clock } from "./components/icons/clock";
+import { Code } from "./components/icons/code";
+import { Geo } from "./components/icons/geo";
+import { Globe } from "./components/icons/globe";
+import { InfoCircle } from "./components/icons/info.circle";
+import { Watch } from "./components/icons/watch";
+import { Failed } from "./components/shared/failed";
+import { Loading } from "./components/shared/loading";
+import { StatsModal } from "./components/stats.modal";
 import { useWeatherStation } from "./hooks/use.weather.station";
-import { Failed } from "./components//failed";
-import { Loading } from "./components/loading";
+
+// Weather Conditions
+// ---
+// temp
+// heatIndex
+// humidity, dewpt
+// windChill
+// uv
+// windSpeed, windGust, winddir
+// pressure
+// precipTotal, precipRate
 
 const calculateWindDirection = (degree: number) => {
   const directions = [
@@ -34,104 +56,80 @@ export const App = () => {
     observation && (
       <>
         {observation.observations.map((obs, idx) => (
-          <div key={idx} className="hero min-h-screen bg-base-200">
-            <div className="hero-content text-center">
-              <div className="">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold pb-6">
-                  {obs.neighborhood}
-                </h1>
-                <div className="flex flex-col space-y-4">
-                  <div className="stats stats-vertical lg:stats-horizontal shadow  bg-primary text-primary-content">
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Temperature
-                      </div>
-                      <div className="stat-value">{obs.imperial.temp}°F</div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Heat Index
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.heatIndex}°F
-                      </div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Dew Point
-                      </div>
-                      <div className="stat-value">{obs.imperial.dewpt}°F</div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Humidity
-                      </div>
-                      <div className="stat-value">{obs.humidity}%</div>
-                    </div>
-                  </div>
-                  <div className="stats stats-vertical lg:stats-horizontal shadow  bg-primary text-primary-content">
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Ultraviolet
-                      </div>
-                      <div className="stat-value">{obs.uv}</div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Pressure
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.pressure} in
+          <div
+            key={idx}
+            className="flex items-center justify-center min-h-screen"
+          >
+            <div className="text-center">
+              <Header title={`${obs.imperial.temp}°`} />
+              <div className="flex items-center flex-col justify-around space-y-6">
+                <div>
+                  <div className="flex flex-col w-full border-opacity-50">
+                    <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+                      <div className="stat">
+                        <div className="stat-figure text-info">
+                          <StatsModal
+                            id="station"
+                            icon={<InfoCircle />}
+                            title="Station Information"
+                            stats={[
+                              {
+                                figure: <Building />,
+                                title: "Neighborhood",
+                                desc: obs.neighborhood,
+                              },
+                              {
+                                figure: <Geo />,
+                                title: "Coordinates",
+                                desc: `${obs.lat}, ${obs.lon}, ${obs.imperial.elev}`,
+                              },
+                              {
+                                figure: <Code />,
+                                title: "Software",
+                                desc: obs.softwareType,
+                              },
+                            ]}
+                          />
+                        </div>
+                        <div className="stat-title">Station</div>
+                        <div className="stat-title">Information</div>
                       </div>
                     </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Precipitation Rate
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.precipRate} in
-                      </div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Precipitation Total
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.precipTotal} in
-                      </div>
-                    </div>
-                  </div>
-                  <div className="stats stats-vertical lg:stats-horizontal shadow  bg-primary text-primary-content">
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Wind Direction
-                      </div>
-                      <div className="stat-value">
-                        {calculateWindDirection(obs.winddir)}
-                      </div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Wind Chill
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.windChill}°F
-                      </div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Wind Speed
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.windSpeed} mph
-                      </div>
-                    </div>
-                    <div className="stat">
-                      <div className="stat-title text-primary-content">
-                        Wind Guest
-                      </div>
-                      <div className="stat-value">
-                        {obs.imperial.windGust} mph
+                    <div className="divider lg:divider-horizontal divider-info"></div>
+                    <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center px-6">
+                      <div className="stat">
+                        <div className="stat-figure text-info">
+                          <StatsModal
+                            id="time"
+                            icon={<Clock />}
+                            title="Observation Time"
+                            stats={[
+                              {
+                                figure: <Globe />,
+                                title: "UTC",
+                                desc: dayjs(obs.obsTimeUtc).format(
+                                  "MMMM D, YYYY h:mm A"
+                                ),
+                              },
+                              {
+                                figure: <Watch />,
+                                title: "Local",
+                                desc: dayjs(obs.obsTimeLocal).format(
+                                  "MMMM D, YYYY h:mm A"
+                                ),
+                              },
+                              {
+                                figure: <Calendar />,
+                                title: "Epoch",
+                                desc: dayjs
+                                  .unix(obs.epoch)
+                                  .format("MMMM D, YYYY h:mm A"),
+                              },
+                            ]}
+                          />
+                        </div>
+                        <div className="stat-title">Observation</div>
+                        <div className="stat-title">Time</div>
                       </div>
                     </div>
                   </div>
