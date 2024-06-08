@@ -58,14 +58,14 @@ export const App = () => {
         {observation.observations.map((obs, idx) => (
           <div
             key={idx}
-            className="flex items-center justify-center min-h-screen"
+            className="flex min-h-screen items-center justify-center"
           >
             <div className="text-center">
               <Header title={`${obs.imperial.temp}°`} />
-              <div className="flex items-center flex-col justify-around space-y-6">
+              <div className="flex flex-col items-center justify-around space-y-6">
                 <div>
-                  <div className="flex flex-col w-full border-opacity-50">
-                    <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+                  <div className="flex w-full flex-col border-opacity-50">
+                    <div className="card grid h-32 flex-grow place-items-center rounded-box bg-base-300">
                       <div className="stat">
                         <div className="stat-figure text-info">
                           <StatsModal
@@ -95,8 +95,8 @@ export const App = () => {
                         <div className="stat-title">Information</div>
                       </div>
                     </div>
-                    <div className="divider lg:divider-horizontal divider-info"></div>
-                    <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center px-6">
+                    <div className="divider divider-info lg:divider-horizontal"></div>
+                    <div className="card grid h-32 flex-grow place-items-center rounded-box bg-base-300 px-6">
                       <div className="stat">
                         <div className="stat-figure text-info">
                           <StatsModal
@@ -108,14 +108,14 @@ export const App = () => {
                                 figure: <Globe />,
                                 title: "UTC",
                                 desc: dayjs(obs.obsTimeUtc).format(
-                                  "MMMM D, YYYY h:mm A"
+                                  "MMMM D, YYYY h:mm A",
                                 ),
                               },
                               {
                                 figure: <Watch />,
                                 title: "Local",
                                 desc: dayjs(obs.obsTimeLocal).format(
-                                  "MMMM D, YYYY h:mm A"
+                                  "MMMM D, YYYY h:mm A",
                                 ),
                               },
                               {

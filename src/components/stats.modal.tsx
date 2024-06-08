@@ -23,8 +23,8 @@ export const StatsModal = (props: StatsModalProps) => {
       </button>
       <dialog id={`${props.id}`} className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-xl py-2">{props.title}</h3>
-          <div className="stats stats-vertical shadow space-y-4">
+          <h3 className="py-2 text-xl font-bold">{props.title}</h3>
+          <div className="stats stats-vertical space-y-4 shadow">
             {props.stats.map((stat, idx) => (
               <div key={idx} className="stat">
                 <div className="stat-figure text-secondary">{stat.figure}</div>
