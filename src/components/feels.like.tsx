@@ -30,17 +30,15 @@ export const FeelsLike = (props: FeelsLikeProps) => {
         : `Similar to the actual temperature.`;
 
   return (
-    <>
-      <Stats
-        stats={[
-          {
-            figure,
-            title: "Feels Like",
-            value: `${heatIndex}°F`,
-            desc,
-          },
-        ]}
-      />
-    </>
+    <Stats
+      stats={[
+        {
+          figure,
+          title: "Feels Like",
+          value: `${heatIndex}°F`,
+          desc,
+        },
+      ]}
+    />
   );
 };
