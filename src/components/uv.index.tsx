@@ -1,4 +1,34 @@
-// uv
-export const UVIndex = () => {
-  return <></>;
+import { Sun } from "./icons/sun";
+import { Stats } from "./shared/stats";
+
+type UVIndexProps = {
+  uv: number;
+};
+
+export const UVIndex = (props: UVIndexProps) => {
+  const { uv } = props;
+
+  const desc =
+    uv <= 2
+      ? `Low`
+      : uv <= 5
+        ? `Moderate`
+        : uv <= 7
+          ? `High`
+          : uv <= 10
+            ? `Very High`
+            : `Extreme`;
+
+  return (
+    <Stats
+      stats={[
+        {
+          figure: <Sun />,
+          title: "UV Index",
+          value: `${uv}`,
+          desc,
+        },
+      ]}
+    />
+  );
 };

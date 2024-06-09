@@ -7,6 +7,7 @@ import { ObservationTime } from "./components/observation.time";
 import { FeelsLike } from "./components/feels.like";
 import { Humidity } from "./components/humidity";
 import { Precipitation } from "./components/precipitation";
+import { UVIndex } from "./components/uv.index";
 
 export const App = () => {
   const { data: observation, isLoading, error } = useWeatherStation();
@@ -29,6 +30,7 @@ export const App = () => {
                 <FeelsLike {...obs} />
                 <Precipitation {...obs} />
                 <Humidity {...obs} />
+                <UVIndex {...obs} />
                 <StationInformation {...obs} />
                 <ObservationTime {...obs} />
               </div>
