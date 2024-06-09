@@ -1,5 +1,3 @@
-// precipTotal, precipRate
-
 import { Droplet } from "./icons/droplet";
 import { Stats } from "./shared/stats";
 
