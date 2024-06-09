@@ -24,7 +24,7 @@ export const App = () => {
         {observation.observations.map((obs, idx) => (
           <div
             key={idx}
-            className="glass flex min-h-screen items-center justify-center"
+            className="glass flex min-h-screen items-center justify-center py-6"
           >
             <div>
               <Header title={`${obs.neighborhood}`} />
