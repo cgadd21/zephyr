@@ -8,6 +8,7 @@ import { FeelsLike } from "./components/feels.like";
 import { Humidity } from "./components/humidity";
 import { Precipitation } from "./components/precipitation";
 import { UVIndex } from "./components/uv.index";
+import { Pressure } from "./components/pressure";
 
 export const App = () => {
   const { data: observation, isLoading, error } = useWeatherStation();
@@ -25,12 +26,14 @@ export const App = () => {
             className="glass flex min-h-screen items-center justify-center"
           >
             <div>
+              <Header title={`${obs.neighborhood}`} />
               <Header title={`${obs.imperial.temp}°`} />
               <div className="flex flex-col items-center justify-around space-y-6">
                 <FeelsLike {...obs} />
                 <Precipitation {...obs} />
                 <Humidity {...obs} />
                 <UVIndex {...obs} />
+                <Pressure {...obs} />
                 <StationInformation {...obs} />
                 <ObservationTime {...obs} />
               </div>
