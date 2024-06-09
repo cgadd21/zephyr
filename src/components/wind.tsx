@@ -1,25 +1,52 @@
+import { Stats } from "./shared/stats";
+import { Wind as WindIcon } from "./icons/wind";
+
 // windSpeed, windGust, winddir, windchill
-export const Wind = () => {
-  const calculateWindDirection = (degree: number) => {
-    const directions = [
-      "N",
-      "NNE",
-      "NE",
-      "ENE",
-      "E",
-      "ESE",
-      "SE",
-      "SSE",
-      "S",
-      "SSW",
-      "SW",
-      "WSW",
-      "W",
-      "WNW",
-      "NW",
-      "NNW",
-    ];
-    return directions[Math.round(degree / 22.5) % 16];
+type WindProps = {
+  winddir: number;
+  imperial: {
+    windSpeed: number;
+    windGust: number;
+    windChill: number;
   };
-  return <></>;
+};
+
+const calculateWindDirection = (degree: number) => {
+  const directions = [
+    "North",
+    "North-Northeast",
+    "Northeast",
+    "East-Northeast",
+    "East",
+    "East-Southeast",
+    "Southeast",
+    "South-Southeast",
+    "South",
+    "South-Southwest",
+    "Southwest",
+    "West-Southwest",
+    "West",
+    "West-Northwest",
+    "Northwest",
+    "North-Northwest",
+  ];
+  return directions[Math.round(degree / 22.5) % 16];
+};
+
+export const Wind = (props: WindProps) => {
+  const { winddir } = props;
+  const { windSpeed, windGust, windChill } = props.imperial;
+
+  return (
+    <Stats
+      stats={[
+        {
+          figure: <WindIcon />,
+          title: "Wind",
+          value: `${windSpeed} mph`,
+          desc: `${windChill}° gusts are up to ${windGust} mph coming from ${calculateWindDirection(winddir)}.`,
+        },
+      ]}
+    />
+  );
 };

@@ -9,6 +9,7 @@ import { Humidity } from "./components/humidity";
 import { Precipitation } from "./components/precipitation";
 import { UVIndex } from "./components/uv.index";
 import { Pressure } from "./components/pressure";
+import { Wind } from "./components/wind";
 
 export const App = () => {
   const { data: observation, isLoading, error } = useWeatherStation();
@@ -31,6 +32,7 @@ export const App = () => {
               <div className="flex flex-col items-center justify-around space-y-6">
                 <FeelsLike {...obs} />
                 <Precipitation {...obs} />
+                <Wind {...obs} />
                 <Humidity {...obs} />
                 <UVIndex {...obs} />
                 <Pressure {...obs} />
