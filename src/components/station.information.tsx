@@ -1,7 +1,6 @@
 import { Building } from "./icons/building";
 import { Code } from "./icons/code";
 import { Geo } from "./icons/geo";
-import { Header } from "./shared/header";
 import { Stats } from "./shared/stats";
 
 type StationInformationProps = {
@@ -15,31 +14,31 @@ type StationInformationProps = {
 };
 
 export const StationInformation = (props: StationInformationProps) => {
+  const { neighborhood, lat, lon, softwareType } = props;
+  const { elev } = props.imperial;
+
   return (
-    <>
-      <Header title="Station Information" />
-      <Stats
-        stats={[
-          {
-            figure: <Building />,
-            title: "Neighborhood",
-            value: props.neighborhood,
-            desc: "",
-          },
-          {
-            figure: <Geo />,
-            title: "Coordinates",
-            value: `${props.lat}, ${props.lon}, ${props.imperial.elev}`,
-            desc: "",
-          },
-          {
-            figure: <Code />,
-            title: "Software",
-            value: props.softwareType,
-            desc: "",
-          },
-        ]}
-      />
-    </>
+    <Stats
+      stats={[
+        {
+          figure: <Building />,
+          title: "Neighborhood",
+          value: neighborhood,
+          desc: "Location of the weather station",
+        },
+        {
+          figure: <Geo />,
+          title: "Coordinates",
+          value: `${lat}, ${lon}, ${elev}`,
+          desc: "Coordinates of the weather station",
+        },
+        {
+          figure: <Code />,
+          title: "Software",
+          value: softwareType,
+          desc: "Software used to collect weather data",
+        },
+      ]}
+    />
   );
 };
