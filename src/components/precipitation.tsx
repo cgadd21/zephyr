@@ -16,7 +16,7 @@ export const Precipitation = (props: PrecipitationProps) => {
       stats={[
         {
           figure: <Droplet />,
-          title: "Precipitation",
+          title: "PRECIPITATION",
           value: `${precipTotal}″`,
           desc: `${precipRate}″ per hour.`,
         },

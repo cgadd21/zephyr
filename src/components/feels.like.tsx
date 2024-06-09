@@ -34,7 +34,7 @@ export const FeelsLike = (props: FeelsLikeProps) => {
       stats={[
         {
           figure,
-          title: "Feels Like",
+          title: "FEELS LIKE",
           value: `${heatIndex}°F`,
           desc,
         },

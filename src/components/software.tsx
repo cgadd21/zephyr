@@ -11,7 +11,7 @@ export const Software = (props: SoftwareProps) => {
       stats={[
         {
           figure: <Code />,
-          title: "Software",
+          title: "SOFTWARE",
           value: softwareType,
           desc: "The software used to collect this data.",
         },

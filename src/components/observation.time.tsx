@@ -14,7 +14,7 @@ export const ObservationTime = (props: ObservationTimeProps) => {
       stats={[
         {
           figure: <Clock />,
-          title: "Last Observation",
+          title: "LAST OBSERVATION",
           value: dayjs(obsTimeLocal).format("dddd h:mm A"),
           desc: "In local time.",
         },

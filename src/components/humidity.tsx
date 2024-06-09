@@ -15,7 +15,7 @@ export const Humidity = (props: HumidityProps) => {
       stats={[
         {
           figure: <Water />,
-          title: "Humidity",
+          title: "HUMIDITY",
           value: `${humidity}%`,
           desc: `Dew point is ${dewpt}°.`,
         },

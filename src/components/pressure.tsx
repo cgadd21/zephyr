@@ -17,7 +17,7 @@ export const Pressure = (props: PressureProps) => {
       stats={[
         {
           figure: <Speedometer />,
-          title: "Pressure",
+          title: "PRESSURE",
           value: `${pressure} inHg`,
           desc,
         },

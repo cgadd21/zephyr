@@ -24,7 +24,7 @@ export const UVIndex = (props: UVIndexProps) => {
       stats={[
         {
           figure: <Sun />,
-          title: "UV Index",
+          title: "UV INDEX",
           value: `${uv}`,
           desc,
         },
