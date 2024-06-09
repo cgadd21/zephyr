@@ -2,7 +2,6 @@ import { Header } from "./components/shared/header";
 import { Failed } from "./components/shared/failed";
 import { Loading } from "./components/shared/loading";
 import { useWeatherStation } from "./hooks/use.weather.station";
-import { StationInformation } from "./components/station.information";
 import { ObservationTime } from "./components/observation.time";
 import { FeelsLike } from "./components/feels.like";
 import { Humidity } from "./components/humidity";
@@ -10,6 +9,7 @@ import { Precipitation } from "./components/precipitation";
 import { UVIndex } from "./components/uv.index";
 import { Pressure } from "./components/pressure";
 import { Wind } from "./components/wind";
+import { Software } from "./components/software";
 
 export const App = () => {
   const { data: observation, isLoading, error } = useWeatherStation();
@@ -36,8 +36,8 @@ export const App = () => {
                 <Humidity {...obs} />
                 <UVIndex {...obs} />
                 <Pressure {...obs} />
-                <StationInformation {...obs} />
                 <ObservationTime {...obs} />
+                <Software {...obs} />
               </div>
             </div>
           </div>
