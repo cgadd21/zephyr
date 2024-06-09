@@ -4,7 +4,7 @@ type StatsProps = {
 
 export const Stats = (props: StatsProps) => {
   return (
-    <div className="stats shadow">
+    <div className="stats w-full shadow">
       {props.stats.map((stat, idx) => (
         <div key={idx} className="stat">
           <div className="stat-figure text-primary">{stat.figure}</div>

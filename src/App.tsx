@@ -24,12 +24,14 @@ export const App = () => {
         {observation.observations.map((obs, idx) => (
           <div
             key={idx}
-            className="glass flex min-h-screen items-center justify-center py-6"
+            className="flex min-h-screen items-center justify-center py-6"
           >
             <div>
-              <Header title={`${obs.neighborhood}`} />
-              <Header title={`${obs.imperial.temp}°`} />
-              <div className="flex flex-col items-center justify-around space-y-6">
+              <div className="flex justify-between px-5">
+                <Header title={`${obs.neighborhood}`} />
+                <Header title={`${obs.imperial.temp}°`} />
+              </div>
+              <div className="lg: flex flex-col items-center justify-around lg:grid lg:grid-cols-2">
                 <FeelsLike {...obs} />
                 <Precipitation {...obs} />
                 <Wind {...obs} />
