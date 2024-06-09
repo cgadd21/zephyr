@@ -1,7 +1,6 @@
 import { Stats } from "./shared/stats";
 import { Wind as WindIcon } from "./icons/wind";
 
-// windSpeed, windGust, winddir, windchill
 type WindProps = {
   winddir: number;
   imperial: {
@@ -44,7 +43,7 @@ export const Wind = (props: WindProps) => {
           figure: <WindIcon />,
           title: "Wind",
           value: `${windSpeed} mph`,
-          desc: `${windChill}° gusts are up to ${windGust} mph coming from ${calculateWindDirection(winddir)}.`,
+          desc: `${windChill}°, gusts up to ${windGust} mph from ${calculateWindDirection(winddir)}.`,
         },
       ]}
     />
