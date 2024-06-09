@@ -13,7 +13,7 @@ export const Software = (props: SoftwareProps) => {
           figure: <Code />,
           title: "Software",
           value: softwareType,
-          desc: "Software used to collect weather data.",
+          desc: "The software used to collect this data.",
         },
       ]}
     />
