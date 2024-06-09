@@ -19,20 +19,20 @@ export const ObservationTime = (props: ObservationTimeProps) => {
         {
           figure: <Globe />,
           title: "UTC",
-          value: dayjs(obsTimeUtc).format("MMMM D, YYYY h:mm A"),
-          desc: "Last observation time in Coordinated Universal Time (UTC)",
+          value: dayjs(obsTimeUtc).format("dddd h:mm A"),
+          desc: "Last observation time in Coordinated Universal Time.",
         },
         {
           figure: <Watch />,
           title: "Local",
-          value: dayjs(obsTimeLocal).format("MMMM D, YYYY h:mm A"),
-          desc: "Last observation time in local time zone",
+          value: dayjs(obsTimeLocal).format("dddd h:mm A"),
+          desc: "Last observation time in local time zone.",
         },
         {
           figure: <Calendar />,
           title: "Epoch",
-          value: dayjs.unix(epoch).format("MMMM D, YYYY h:mm A"),
-          desc: "Last observation time in epoch format",
+          value: dayjs.unix(epoch).format("dddd h:mm A"),
+          desc: "Last observation time in epoch format.",
         },
       ]}
     />

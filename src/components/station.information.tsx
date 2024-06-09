@@ -24,19 +24,19 @@ export const StationInformation = (props: StationInformationProps) => {
           figure: <Building />,
           title: "Neighborhood",
           value: neighborhood,
-          desc: "Location of the weather station",
+          desc: "Location of the weather station.",
         },
         {
           figure: <Geo />,
           title: "Coordinates",
           value: `${lat}, ${lon}, ${elev}`,
-          desc: "Coordinates of the weather station",
+          desc: "Coordinates of the weather station.",
         },
         {
           figure: <Code />,
           title: "Software",
           value: softwareType,
-          desc: "Software used to collect weather data",
+          desc: "Software used to collect weather data.",
         },
       ]}
     />
