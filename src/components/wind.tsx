@@ -32,10 +32,10 @@ const calculateWindDirection = (degree: number) => {
   return directions[Math.round(degree / 22.5) % 16];
 };
 
-export const Wind = (props: WindProps) => {
-  const { winddir } = props;
-  const { windSpeed, windGust, windChill } = props.imperial;
-
+export const Wind = ({
+  winddir,
+  imperial: { windSpeed, windGust, windChill },
+}: WindProps) => {
   return (
     <Stats
       stats={[

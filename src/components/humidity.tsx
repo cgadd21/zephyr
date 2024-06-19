@@ -6,10 +6,7 @@ type HumidityProps = {
   imperial: { dewpt: number };
 };
 
-export const Humidity = (props: HumidityProps) => {
-  const { humidity } = props;
-  const { dewpt } = props.imperial;
-
+export const Humidity = ({ humidity, imperial: { dewpt } }: HumidityProps) => {
   return (
     <Stats
       stats={[

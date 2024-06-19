@@ -3,9 +3,7 @@ import { Stats } from "./shared/stats";
 
 type SoftwareProps = { softwareType: string };
 
-export const Software = (props: SoftwareProps) => {
-  const { softwareType } = props;
-
+export const Software = ({ softwareType }: SoftwareProps) => {
   return (
     <Stats
       stats={[

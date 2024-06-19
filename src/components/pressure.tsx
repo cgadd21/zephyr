@@ -7,9 +7,7 @@ type PressureProps = {
   };
 };
 
-export const Pressure = (props: PressureProps) => {
-  const { pressure } = props.imperial;
-
+export const Pressure = ({ imperial: { pressure } }: PressureProps) => {
   const desc = pressure >= 30 ? `High` : pressure <= 29.92 ? `Low` : `Normal`;
 
   return (

@@ -10,9 +10,9 @@ type FeelsLikeProps = {
   };
 };
 
-export const FeelsLike = (props: FeelsLikeProps) => {
-  const { temp, heatIndex } = props.imperial;
-
+export const FeelsLike = ({
+  imperial: { temp, heatIndex },
+}: FeelsLikeProps) => {
   const figure =
     heatIndex > 80 ? (
       <ThermometerHigh />

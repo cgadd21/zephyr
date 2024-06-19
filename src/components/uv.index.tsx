@@ -5,9 +5,7 @@ type UVIndexProps = {
   uv: number;
 };
 
-export const UVIndex = (props: UVIndexProps) => {
-  const { uv } = props;
-
+export const UVIndex = ({ uv }: UVIndexProps) => {
   const desc =
     uv <= 2
       ? `Low`

@@ -8,9 +8,9 @@ type PrecipitationProps = {
   };
 };
 
-export const Precipitation = (props: PrecipitationProps) => {
-  const { precipRate, precipTotal } = props.imperial;
-
+export const Precipitation = ({
+  imperial: { precipRate, precipTotal },
+}: PrecipitationProps) => {
   return (
     <Stats
       stats={[

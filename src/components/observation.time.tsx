@@ -6,9 +6,7 @@ type ObservationTimeProps = {
   obsTimeLocal: string;
 };
 
-export const ObservationTime = (props: ObservationTimeProps) => {
-  const { obsTimeLocal } = props;
-
+export const ObservationTime = ({ obsTimeLocal }: ObservationTimeProps) => {
   return (
     <Stats
       stats={[
