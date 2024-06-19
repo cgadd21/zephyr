@@ -33,9 +33,7 @@ type Observations = {
 };
 
 export const useWeatherStation = () => {
-  const { data, isLoading, error } = useSWR<Observations>(
-    import.meta.env.VITE_WEATHER_API_URL,
-  );
+  const { data, isLoading, error } = useSWR<Observations>("/api");
 
   return {
     data,
